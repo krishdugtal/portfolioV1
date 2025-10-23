@@ -32,8 +32,19 @@ jobs:
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # Determine token to use: prefer GH_PAGES_PAT (repository secret) over default GITHUB_TOKEN
+          # (We compute it in a previous step and set it as an environment variable.)
+          github_token: ${{ env.PUBLISH_TOKEN }}
           publish_dir: ./publish
           publish_branch: gh-pages
           # keep the commit history empty for the branch
           keep_files: false
+
+      - name: Prepare publish token
+        id: prepare_token
+        run: |
+          if [ -n "${{ secrets.GH_PAGES_PAT }}" ]; then
+            echo "PUBLISH_TOKEN=${{ secrets.GH_PAGES_PAT }}" >> $GITHUB_ENV
+          else
+            echo "PUBLISH_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> $GITHUB_ENV
+          fi
