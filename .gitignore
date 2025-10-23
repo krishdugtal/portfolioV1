@@ -1,12 +1,12 @@
-# Ignore everything by default
-/*
+# # Ignore everything by default
+# /*
 
-# But keep these files at repo root so GitHub Pages can serve index.html
-!/index.html
-!/README.md
-!/LICENSE
-!/.gitignore
-!/.package.json
+# # But keep these files at repo root so GitHub Pages can serve index.html
+# !/index.html
+# !/README.md
+# !/LICENSE
+# !/.gitignore
+# !/.package.json
 
 # Keep GitHub metadata and CNAME if present
 !/.github/
