@@ -13,6 +13,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Fail early if GH_PAGES_PAT missing
+        if: ${{ !secrets.GH_PAGES_PAT }}
+        run: |
+          echo "ERROR: GH_PAGES_PAT secret is not set."
+          echo "Create a Personal Access Token (repo scope) and add it as a repository secret named GH_PAGES_PAT."
+          echo "See: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token"
+          exit 1
+
       - name: Setup Node (optional)
         uses: actions/setup-node@v4
         with:
@@ -30,21 +38,11 @@ jobs:
           fi
 
       - name: Deploy to gh-pages
+        # run only when GH_PAGES_PAT is provided (pre-check step above fails otherwise)
         uses: peaceiris/actions-gh-pages@v3
         with:
-          # Determine token to use: prefer GH_PAGES_PAT (repository secret) over default GITHUB_TOKEN
-          # (We compute it in a previous step and set it as an environment variable.)
-          github_token: ${{ env.PUBLISH_TOKEN }}
+          github_token: ${{ secrets.GH_PAGES_PAT }}
           publish_dir: ./publish
           publish_branch: gh-pages
           # keep the commit history empty for the branch
           keep_files: false
-
-      - name: Prepare publish token
-        id: prepare_token
-        run: |
-          if [ -n "${{ secrets.GH_PAGES_PAT }}" ]; then
-            echo "PUBLISH_TOKEN=${{ secrets.GH_PAGES_PAT }}" >> $GITHUB_ENV
-          else
-            echo "PUBLISH_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> $GITHUB_ENV
-          fi
