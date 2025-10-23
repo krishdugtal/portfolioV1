@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Krishved Singh Dugtal — Portfolio</title>
+    <style>
+        *{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:linear-gradient(135deg,#007BFF 0%,#00B4D8 100%);color:#333;padding:24px;}
+        .container{max-width:1200px;margin:0 auto}
+        header{background:rgba(255,255,255,0.95);padding:28px;border-radius:20px;box-shadow:0 8px 30px rgba(0,0,0,0.1);text-align:center;margin-bottom:30px}
+        header h1{color:#007BFF;font-size:2.5em;margin-bottom:10px}
+        header .sub{color:#666;font-size:1.2em}
+        .meta{margin-top:12px;font-weight:700}
+        nav{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:30px;background:rgba(255,255,255,0.9);padding:15px;border-radius:15px;box-shadow:0 4px 16px rgba(0,0,0,0.1)}
+        nav a{background:linear-gradient(135deg,#007BFF 0%,#00B4D8 100%);color:#fff;padding:12px 25px;border-radius:25px;text-decoration:none;transition:all .3s ease}
+        nav a:hover{transform:translateY(-2px);box-shadow:0 5px 15px rgba(0,123,255,0.4)}
+        section.card{display:none;background:rgba(255,255,255,0.95);padding:30px;border-radius:20px;box-shadow:0 8px 32px rgba(0,0,0,0.1);margin-bottom:30px}
+        section.active{display:block;animation:fadeIn 0.5s ease-in-out}
+        @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+        h2{color:#007BFF;margin-bottom:20px;font-size:2em;border-bottom:3px solid #007BFF;padding-bottom:10px}
+        .lead{line-height:1.8;margin-bottom:20px;font-size:1.1em}
+        .skills-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:20px}
+        .skill{background:#E3F2FD;padding:10px 15px;border-left:4px solid #007BFF;border-radius:10px;color:#007BFF;font-weight:600}
+        .projects,.repo-grid,.certificate-grid,.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+        .project,.repo-card,.certificate-item{background:linear-gradient(135deg,#E3F2FD 0%,#BBDEFB 100%);padding:20px;border-radius:15px;border-left:4px solid #007BFF;transition:transform .3s ease,box-shadow .3s ease}
+        .project:hover,.repo-card:hover,.certificate-item:hover{transform:translateY(-5px);box-shadow:0 10px 20px rgba(0,123,255,0.3)}
+        .project h3,.repo-card h4,.certificate-item h3{color:#007BFF;margin-bottom:10px}
+        .github-link,.drive-link{display:inline-block;margin-top:15px;padding:12px 25px;border-radius:25px;text-decoration:none;color:#fff;background:linear-gradient(135deg,#007BFF 0%,#00B4D8 100%);transition:all .3s ease}
+        .github-link:hover,.drive-link:hover{transform:scale(1.05);box-shadow:0 5px 15px rgba(0,123,255,0.3)}
+        footer{text-align:center;color:#fff;padding:20px;text-shadow:2px 2px 4px rgba(0,0,0,0.3)}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PORTFOLIO</h1>
+            <div class="sub">21CSC203P – Advanced Programming Practice</div>
+            <p class="meta">Student Name: <strong>Krishved Singh Dugtal</strong> | Register Number: <strong>RA2411003011528</strong></p>
+            <p>Department of Computing Technologies | SRM Institute of Science and Technology, Kattankulathur</p>
+            <p><strong>October 2025</strong></p>
+        </header>
+
+        <nav>
+            <a href="#about">About Me</a>
+            <a href="#projects">Projects</a>
+            <a href="#github">GitHub</a>
+            <a href="#certificates">Certificates</a>
+            <a href="#ecurricula">E-Curricula</a>
+            <a href="#hackerrank">HackerRank</a>
+        </nav>
+
+        <!-- ABOUT ME SECTION -->
+        <section id="about" class="card active">
+            <h2>About Me</h2>
+            <p class="lead">Hello! I’m Krishved Singh Dugtal, a 2nd-year Computer Science student at SRM University with a focus on Java development and software engineering. I enjoy building efficient, user-friendly programs and enhancing my skills in backend logic, frontend design, and problem-solving. I strive to write clean, optimized code and continuously improve my abilities through projects and platforms like GitHub and HackerRank.</p>
+
+            <h3 style="color:#007BFF;margin-top:25px">Technical Skills</h3>
+            <div class="skills-list">
+                <div class="skill">Java (Core, OOP, Collections, Exception Handling)</div>
+                <div class="skill">C++ (OOP, Templates, STL)</div>
+                <div class="skill">Swing & JavaFX GUI Development</div>
+                <div class="skill">HTML, CSS & Responsive Design</div>
+                <div class="skill">Data Structures & Algorithms</div>
+                <div class="skill">Git, GitHub & Version Control</div>
+                <div class="skill">Object-Oriented Design Principles</div>
+                <div class="skill">Problem Solving (HackerRank, LeetCode)</div>
+                <div class="skill">Database Connectivity (JDBC, MySQL)</div>
+                <div class="skill">Software Debugging & Documentation</div>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section id="projects" class="card">
+            <h2>Project Profile</h2>
+            <div class="projects">
+                <article class="project">
+                    <h3>Lingofy - Language Translator</h3>
+                    <p>An offline Language Translator Model that works without internet connectivity, providing translation services anytime, anywhere. It demonstrates machine learning concepts applied to language translation in an offline setup.</p>
+                </article>
+                <article class="project">
+                    <h3>Scientific Calculator</h3>
+                    <p>A Java-based GUI calculator using Swing that performs both basic arithmetic and advanced scientific operations such as trigonometric, logarithmic, and exponential functions.</p>
+                </article>
+                <article class="project">
+                    <h3>Student Registration Form</h3>
+                    <p>A Java Swing-based desktop application that allows users to input and manage student details with an interactive GUI. It includes form validation, data storage, and user-friendly features.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- GITHUB SECTION -->
+        <section id="github" class="card">
+            <h2>GitHub Profile</h2>
+            <p class="lead">Explore all my open-source and academic projects hosted on GitHub. Each repository showcases my coding practices, learning progress, and project implementation.</p>
+            <a href="https://github.com/krishdugtal" target="_blank" class="github-link">🔗 Visit My GitHub Profile</a>
+
+            <h3 style="color:#007BFF;margin-top:25px">Featured Repositories</h3>
+            <div class="repo-grid">
+                <div class="repo-card">
+                    <h4>Lingofy - Language Translator</h4>
+                    <p>Offline translator model providing multilingual support even without internet access.</p>
+                </div>
+                <div class="repo-card">
+                    <h4>Scientific Calculator</h4>
+                    <p>Feature-rich GUI calculator designed using Java Swing for interactive mathematical computations.</p>
+                </div>
+                <div class="repo-card">
+                    <h4>Student Registration Form</h4>
+                    <p>Desktop form-based application for managing student information using Java Swing and event handling.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CERTIFICATES SECTION -->
+        <section id="certificates" class="card">
+            <h2>Certificates & Achievements</h2>
+            <p class="lead">My certification journey reflects my continuous learning and skill enhancement. Below are my top certifications and achievements:</p>
+            <div class="certificate-grid">
+                <div class="certificate-item">
+                    <h3>🎓 Oracle Java Certification</h3>
+                    <p>Completed Oracle’s official Java certification course, mastering OOP concepts, file handling, and multithreading.</p>
+                </div>
+                <div class="certificate-item">
+                    <h3>💻 NPTEL Certification</h3>
+                    <p>Earned certification in Advanced Programming in Java under IIT faculty, focusing on data structures, algorithms, and design patterns.</p>
+                </div>
+                <div class="certificate-item">
+                    <h3>🏆 Workshop Participation</h3>
+                    <p>Actively participated in SRM workshops and seminars on AI, Cloud Computing, and Full Stack Development.</p>
+                </div>
+            </div>
+            <a href="https://drive.google.com/drive/folders/13nO_4xmS2k_ANn-6DKcW4BD8XPWYOlxV?usp=sharing" target="_blank" class="drive-link">📂 View All Certificates</a>
+        </section>
+
+        <!-- E-CURRICULA SECTION -->
+        <section id="ecurricula" class="card">
+            <h2>E-Curricula Completion</h2>
+            <p class="lead">Completed all sessions across 5 units under Advanced Programming Practice, focusing on Java programming concepts, OOP principles, and project-based learning.</p>
+            <div class="grid-3">
+                <div class="certificate-item"><h3>📘 Unit 1</h3><p>Java basics, syntax, loops, and conditionals.</p></div>
+                <div class="certificate-item"><h3>📗 Unit 2</h3><p>Functions, recursion, and array operations.</p></div>
+                <div class="certificate-item"><h3>📙 Unit 3</h3><p>OOP principles: inheritance, polymorphism, and encapsulation.</p></div>
+                <div class="certificate-item"><h3>📒 Unit 4</h3><p>File handling, exception management, and data persistence.</p></div>
+                <div class="certificate-item"><h3>📕 Unit 5</h3><p>Mini-project development using JavaFX and advanced logic building.</p></div>
+            </div>
+            <a href="https://drive.google.com/drive/folders/16NGDygGD_dY_A2PbePecsv2ySKlM--r4?usp=drive_link" target="_blank" class="drive-link">🔗 View E-Curricula Proofs</a>
+        </section>
+
+        <!-- HACKERRANK SECTION -->
+        <section id="hackerrank" class="card">
+            <h2>HackerRank Achievements</h2>
+            <p class="lead">On HackerRank, I have solved multiple challenges and earned recognition for consistent performance in Java and problem-solving domains.</p>
+            <div class="grid-3">
+                <div class="certificate-item"><h3>🟢 Easy Challenges</h3><p>Mastered programming fundamentals through logic-based problems.</p></div>
+                <div class="certificate-item"><h3>🟡 Medium Challenges</h3><p>Strengthened algorithmic thinking through sorting, recursion, and pattern problems.</p></div>
+                <div class="certificate-item"><h3>🔴 Hard Challenges</h3><p>Solved complex algorithmic and data-structure challenges under timed constraints.</p></div>
+            </div>
+            <a href="https://www.hackerrank.com/profile/krishdugtal2428" target="_blank" class="github-link">💻 Visit My HackerRank Profile</a>
+            <a href="https://drive.google.com/drive/folders/1vy-lXNt8l4wCbJKUDNcz6u0c6YgSX_nl?usp=drive_link" target="_blank" class="drive-link">📂 View HackerRank Proofs</a>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <p>&copy; 2025 SRM Institute of Science and Technology</p>
+            <p>Advanced Programming Practice Portfolio — Krishved Singh Dugtal</p>
+        </footer>
+    </div>
+
+    <script>
+        const links=document.querySelectorAll('nav a');
+        const sections=document.querySelectorAll('section.card');
+        links.forEach(link=>{
+            link.addEventListener('click',e=>{
+                e.preventDefault();
+                const target=document.querySelector(link.getAttribute('href'));
+                sections.forEach(s=>s.classList.remove('active'));
+                target.classList.add('active');
+                window.scrollTo({top:0,behavior:'smooth'});
+            });
+        });
+    </script>
+</body>
+</html>
