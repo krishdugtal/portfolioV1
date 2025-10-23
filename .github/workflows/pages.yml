@@ -28,7 +28,8 @@ jobs:
           echo "No build step defined; deploying repo root"
 
       - name: Upload artifact for GitHub Pages
-        uses: actions/upload-pages-artifact@v1
+        # use v2 which replaces deprecated v1/v1 alias and avoids artifact v3 deprecation
+        uses: actions/upload-pages-artifact@v2
         with:
           path: ./
 
@@ -37,7 +38,10 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deploy-pages.outputs.page_url }}
+      # reference the step id below (no hyphens in step ids)
+      url: ${{ steps.deploy_pages.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v1
+        id: deploy_pages
+        # use the latest stable deploy-pages action (v3) to avoid deprecation issues
+        uses: actions/deploy-pages@v3
