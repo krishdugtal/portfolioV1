@@ -28,20 +28,10 @@ jobs:
           echo "No build step defined; deploying repo root"
 
       - name: Upload artifact for GitHub Pages
-        # use v3 which avoids internal dependency on deprecated actions/upload-artifact@v3
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./
 
-  deploy-pages:
-    needs: deploy
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      # reference the step id below (no hyphens in step ids)
-      url: ${{ steps.deploy_pages.outputs.page_url }}
-    steps:
       - name: Deploy to GitHub Pages
         id: deploy_pages
-        # use the latest stable deploy-pages action (v3) to avoid deprecation issues
         uses: actions/deploy-pages@v3
