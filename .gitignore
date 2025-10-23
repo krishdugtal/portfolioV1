@@ -1,0 +1,26 @@
+# Ignore everything by default
+/*
+
+# But keep these files at repo root so GitHub Pages can serve index.html
+!/index.html
+!/README.md
+!/LICENSE
+!/.gitignore
+
+# Keep GitHub metadata and CNAME if present
+!/.github/
+!/CNAME
+
+# Node / build artifacts (if any) - still ignored
+node_modules/
+dist/
+build/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor backups
+*.swp
+*.swo
+*~
