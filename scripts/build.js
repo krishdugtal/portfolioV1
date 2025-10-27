@@ -10,7 +10,7 @@ function copyRecursive(src, dest) {
     if (!fs.existsSync(dest)) fs.mkdirSync(dest);
     const entries = fs.readdirSync(src);
     for (const entry of entries) {
-      if (entry === 'node_modules' || entry === '.git' || entry === 'build' || entry === 'scripts') continue;
+      if (entry === 'node_modules' || entry === '.git' || entry === 'build') continue;
       const srcPath = path.join(src, entry);
       const destPath = path.join(dest, entry);
       copyRecursive(srcPath, destPath);
