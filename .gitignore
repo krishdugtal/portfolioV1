@@ -6,7 +6,7 @@
 # !/README.md
 # !/LICENSE
 # !/.gitignore
-# !/.package.json
+# !/package.json
 
 # Keep GitHub metadata and CNAME if present
 !/.github/
