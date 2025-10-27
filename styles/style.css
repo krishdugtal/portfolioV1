@@ -123,6 +123,9 @@ h2{
     backdrop-filter:blur(10px);
     position:relative;
     overflow:hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 280px;
 }
 .project::before,.repo-card::before,.certificate-item::before{
     content:'';
@@ -166,6 +169,68 @@ h2{
     box-shadow:0 5px 20px rgba(25,118,210,0.4);
     background:linear-gradient(135deg,#1976D2 0%,#1565C0 100%);
 }
+.repo-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    background: rgba(25,118,210,0.15);
+    border: 1px solid rgba(79,195,247,0.3);
+    border-radius: 6px;
+    color: #4FC3F7;
+    text-decoration: none;
+    font-size: 0.85em;
+    transition: all 0.3s ease;
+    margin-top: auto;
+    align-self: flex-end;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+.repo-button:hover {
+    background: rgba(25,118,210,0.25);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(79,195,247,0.15);
+}
+
+.github-symbol, .cert-icon {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+}
+
+.repo-button:hover .github-symbol {
+    transform: rotate(3deg);
+}
+
+.cert-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    background: rgba(25,118,210,0.15);
+    border: 1px solid rgba(79,195,247,0.3);
+    border-radius: 6px;
+    color: #4FC3F7;
+    text-decoration: none;
+    font-size: 0.85em;
+    transition: all 0.3s ease;
+    margin-top: auto;
+    align-self: flex-end;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+.cert-button:hover {
+    background: rgba(25,118,210,0.25);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(79,195,247,0.15);
+}
+
+.cert-button:hover .cert-icon {
+    transform: translateY(-1px);
+}
+
 footer{
     text-align:center;
     color:#90CAF9;
